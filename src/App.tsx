@@ -49,7 +49,7 @@ function TestCaseRow<T extends (...args: any[]) => any>(
           <span class="text-neutral-600 select-none mr-1">
             #{String(props.index + 1).padStart(2, '0')}
           </span>
-          {props.label ?? `(${paramsDisplay()})`}
+          {props.label ?? `(${paramsDisplay()}) => ${actual()}`}
         </span>
         <span
           class={[
@@ -224,7 +224,7 @@ const addTests: TestSet<typeof add> = {
   func: add,
   label: 'Addition',
   cases: [
-    { params: [1, 2], expected: 3 },
+    { params: [1, 2], expected: 30 },
     { params: [2, 3], expected: 5 },
     { params: [3, 4], expected: 7 },
     { params: [2, 2], expected: 4 },
